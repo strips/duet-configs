@@ -1,0 +1,9 @@
+G1 Z5 ; raise z 5mm
+G1 X50 Y0 F15000; go to origin
+G92 E0 ; zero extrusion
+G1 Z0.6 ; adjust closer when dialed in extrusion speed/amount
+G1 X250 Y0 E20 F2000 ; extrude line
+G1 X300 Y0 Z0 E5 F2000 ; end with a dip towards bed to try to clean nozzle
+G92 E0 ; zero extrusion
+;G1 E-8 F1000 ; commented because gcode startup begins with retract
+G1 Z5

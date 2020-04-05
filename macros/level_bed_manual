@@ -1,0 +1,13 @@
+; remember to reset after manual bed level because we modify the printer config.
+
+M671 X25:25:326:326 Y314:54:54:314 P0.5 ; adjusting screw positions and set 0.5mm pitch
+
+G28 ; home
+M118 P3 S"Probe P0"
+G30 P0 X25 Y314 Z-99999 ; probe near an adjusting screw
+M118 P3 S"Probe P1"
+G30 P1 X25 Y54 Z-99999 ; probe near an adjusting screw
+M118 P3 S"Probe P2"
+G30 P2 X318 Y54 Z-99999 ; probe near an adjusting screw
+M118 P3 S"Probe P3 and report adjustments"
+G30 P3 X318 Y314 Z-99999 S4 ; probe near an adjusting screw and report adjustments needed
